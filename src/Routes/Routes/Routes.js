@@ -3,6 +3,7 @@ import Category from "../../components/Category";
 import CoursesPage from "../../components/CoursesPage";
 import Home from "../../components/Home";
 import LoginForm from "../../components/LoginForm";
+import PageNotFound from "../../components/PageNotFound";
 import RegisterForm from "../../components/RegisterForm";
 import Main from "../../layouts/Main";
 
@@ -42,6 +43,10 @@ export const routes = createBrowserRouter([
                 path: 'faqs/',
                 element: <LoginForm></LoginForm>
             },
+            {
+                path: '*',
+                element: <PageNotFound></PageNotFound>
+            }
 
         ]
     }
