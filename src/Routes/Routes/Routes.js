@@ -1,4 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
+import CoursesPage from "../../components/CoursesPage";
 import Home from "../../components/Home";
 import LoginForm from "../../components/LoginForm";
 import Main from "../../layouts/Main";
@@ -32,7 +33,8 @@ export const routes = createBrowserRouter([
             },
             {
                 path: 'courses',
-                element: <LoginForm></LoginForm>
+                element: <CoursesPage></CoursesPage>,
+                loader: () => fetch('Data/course-intro.json')
             },
         ]
     }

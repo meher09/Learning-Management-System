@@ -18,11 +18,7 @@ const CourseCard = ({ course }) => {
                                     width="30" height="30" alt="" />
                                 <p>{instructor}</p>
                             </div>
-                            <h5 className="card-title text-primary text-start">{name} </h5>
-
-                            <p className='text-start'>{description}</p>
-
-
+                            <h5 className="card-title h6 text-primary text-start">{name} </h5>
                             <div className="d-flex justify-content-between my-3">
                                 <p><FaStar className='text-warning' /><strong> {rating} </strong>({reviews_count} Reviews)</p>
                                 <p><FaVideo className='text-danger' />  {total_vedio} Vedios</p>
