@@ -15,8 +15,8 @@ const CoursesPage = () => {
 
                 <div className="row">
                     <div className="col-md-9">
-                        
-                        <div class="row row-cols-1 row-cols-md-3 g-4">
+
+                        <div className="row row-cols-1 row-cols-md-3 g-4">
                             {
                                 allCourse.map(course => <CourseCard
                                     key={course.id}

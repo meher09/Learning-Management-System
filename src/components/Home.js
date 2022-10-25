@@ -18,7 +18,7 @@ const Home = () => {
                 <p>Here we have added some of the courses for your consideration.
                     you can browse our course page for more courses</p>
                 <hr className='w-50 mx-auto mb-5' />
-                <div class="row row-cols-1 row-cols-md-3 g-4">
+                <div className="row row-cols-1 row-cols-md-3 g-4">
                     {
                         allCourse.slice(0, 3).map(course => <CourseCard
                             key={course.id}

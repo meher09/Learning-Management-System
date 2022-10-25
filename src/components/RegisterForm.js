@@ -4,7 +4,7 @@ import { GoMarkGithub } from "react-icons/go";
 import { Link } from 'react-router-dom';
 
 
-const LoginForm = () => {
+const RegisterForm = () => {
 
     const handleSubmit = event => {
         event.preventDefault();
@@ -25,10 +25,10 @@ const LoginForm = () => {
 
                         <div className="d-flex justify-content-center">
                             <div className="bg-light me-2 p-3 rounded border text-uppercase">
-                                <h2 className='h5'> <GoMarkGithub className='fs-1 me-2' /> Sign in with Github </h2>
+                                <h2 className='h5'> <GoMarkGithub className='fs-1 me-2' /> Register with Github </h2>
                             </div>
                             <div className="bg-secondary me-2 p-3 rounded border text-uppercase text-white">
-                                <h2 className='h5'><FcGoogle className='fs-1 me-2' />sign in with Google</h2>
+                                <h2 className='h5'><FcGoogle className='fs-1 me-2' />Register with Google</h2>
                             </div>
                         </div>
                         <hr className='w-50 mx-auto' />
@@ -36,22 +36,34 @@ const LoginForm = () => {
 
                         <form className='text-start' onSubmit={handleSubmit}>
                             <div className="mb-3 ">
+                                <label htmlFor="full_name" className="form-label">Full Name</label>
+                                <input type="text" name="full_name" className="form-control" />
+                            </div>
+
+                            <div className="mb-3 ">
                                 <label htmlFor="email" className="form-label">Email address</label>
                                 <input type="email" name="email" className="form-control" />
                             </div>
                             <div className="mb-3">
                                 <label htmlFor="password" className="form-label">Password</label>
                                 <input type="password" name="password" className="form-control" />
-                                <div className="form-text text-end text-danger">Forget Password</div>
+                            </div>
 
+                            <div className="mb-3">
+                                <label htmlFor="password_two" className="form-label">Password Confirmation</label>
+                                <input type="password" name="password_two" className="form-control" />
+                            </div>
 
+                            <div className="mb-3">
+                                <label htmlFor="photo" className="form-label">Photo Url</label>
+                                <input type="url" name="photo" className="form-control" />
                             </div>
                             <div className="d-grid gap-2">
-                                <input className="btn btn-success" type="submit" value="Login" />
+                                <input className="btn btn-success" type="submit" value="Register" />
                             </div>
                         </form>
 
-                        <div className="my-3 text-start">New to Site ? <Link to='/register' className='text-decoration-none text-danger'> Register Now</Link></div>
+                        <div className="my-3 text-start">Already Have an Account? <Link to='/login' className='text-decoration-none text-danger'>Login Now</Link></div>
 
                     </div>
                 </div>
@@ -60,4 +72,4 @@ const LoginForm = () => {
     );
 };
 
-export default LoginForm;
+export default RegisterForm;

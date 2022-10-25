@@ -16,20 +16,22 @@ const Sidebar = () => {
     return (
 
         <>
-            <div class="list-group text-start mx-md-4 ">
-                <button type="button" class="list-group-item list-group-item-action">
-                    <Link to='courses' className=' text-decoration-none text-reset'>
-                        <AiFillCaretRight className='text-danger' /> All Courses</Link>
-                </button>
+            <div className="list-group text-start mx-md-4 ">
+                <Link to="/courses" className=' text-decoration-none text-reset'>
+                    <button type="button" className="list-group-item list-group-item-action">
+                        <AiFillCaretRight className='text-danger' /> All Courses
+                    </button>
+                </Link>
 
 
                 {
-                    categories.map(category => <button
+                    categories.map(category => <Link className='text-decoration-none text-reset' to={`/category/${category.slug}`}> <button
                         type='button'
                         className='list-group-item list-group-item-action '
                         key={category.id}>
-                        <Link className='text-decoration-none text-reset' to={`/category/${category.slug}`}><AiFillCaretRight className='text-danger' /> {category.name}</Link>
-                    </button>)
+                        <AiFillCaretRight className='text-danger' /> {category.name}
+                    </button> </Link>
+                    )
                 }
 
             </div>
