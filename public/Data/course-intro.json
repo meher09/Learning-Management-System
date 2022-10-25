@@ -9,7 +9,8 @@
         "instructor_image": "https:\/\/randomuser.me\/api\/portraits\/men\/75.jpg",
         "image": "https://i.imgur.com/VynTDuN.png",
         "description": "If you want to become a web developer, you’ll be wondering what programming languages to learn? Javascript should be your first and essential choices.",
-        "reviews_count": 3000
+        "reviews_count": 3000,
+        "category": "02"
     },
     {
         "id": 2,
@@ -21,7 +22,8 @@
         "instructor_image": "https:\/\/randomuser.me\/api\/portraits\/men\/17.jpg",
         "image": "https://i.imgur.com/yIOtFlz.png",
         "description": "So the first reason you should learn ReactJS is because it is the most loved and used web library among professional developers",
-        "reviews_count": 3500
+        "reviews_count": 3500,
+        "category": "04"
     },
     {
         "id": 3,
@@ -33,7 +35,8 @@
         "instructor_image": "https:\/\/randomuser.me\/api\/portraits\/men\/27.jpg",
         "image": "https://i.imgur.com/AhqKUfL.png",
         "description": "If you plan to make your living by building websites, learning Bootstrap will save you a ton of time and trouble. ",
-        "reviews_count": 5851
+        "reviews_count": 5851,
+        "category": "01"
     },
     {
         "id": 4,
@@ -45,7 +48,8 @@
         "instructor_image": "https:\/\/randomuser.me\/api\/portraits\/men\/26.jpg",
         "image": "https://i.imgur.com/a3F5Nfy.png",
         "description": "Tailwind CSS makes it quicker to write and maintain the code of your application. By using this utility-first framework, you don't have to write custom CSS to style your application.",
-        "reviews_count": 3161
+        "reviews_count": 3161,
+        "category": "01"
     },
     {
         "id": 5,
@@ -57,7 +61,8 @@
         "instructor_image": "https:\/\/randomuser.me\/api\/portraits\/men\/27.jpg",
         "image": "https://i.imgur.com/tfTrC5U.png",
         "description": "Python is an in-demand, accessible programming language with an active, ever-growing community of users. For anyone looking to switch careers into the tech world through coding, Python is a great place to start.",
-        "reviews_count": 4121
+        "reviews_count": 4121,
+        "category": "05"
     },
     {
         "id": 6,
@@ -69,7 +74,8 @@
         "instructor_image": "https:\/\/randomuser.me\/api\/portraits\/men\/28.jpg",
         "image": "https://i.imgur.com/3vpdBD4.png",
         "description": "Using Node It's easy to send and synchronize the data between server-side and client-side coding. Because of using the same language Javascript on both sides your source code will be cleaner and more consistent. ",
-        "reviews_count": 512
+        "reviews_count": 512,
+        "category": "06"
     },
     {
         "id": 7,
@@ -81,7 +87,8 @@
         "instructor_image": "https:\/\/randomuser.me\/api\/portraits\/women\/35.jpg",
         "image": "https://i.imgur.com/3ByCzCK.png",
         "description": "Django is a high-level Python web framework that enables rapid development of secure and maintainable websites. Built by experienced developers, Django takes care of much of the hassle of web development,",
-        "reviews_count": 214
+        "reviews_count": 214,
+        "category": "03"
     },
     {
         "id": 8,
@@ -93,7 +100,8 @@
         "instructor_image": "https:\/\/randomuser.me\/api\/portraits\/women\/38.jpg",
         "image": "https://i.imgur.com/agfMruU.png",
         "description": "High earning potential, opportunity for growth, and flexibility are usually top of mind for most who get into the industry. Some of the challenges for people who pursue web development is the competitive nature of the job market.",
-        "reviews_count": 8781
+        "reviews_count": 8781,
+        "category": "03"
     },
     {
         "id": 9,
@@ -105,6 +113,7 @@
         "instructor_image": "https:\/\/randomuser.me\/api\/portraits\/women\/20.jpg",
         "image": "https://i.imgur.com/dr6czpy.jpg",
         "description": "Web applications are web apps that you can run on a web browser. Since Express. js only requires javascript, it becomes easier for programmers and developers to build web applications and API without any effort.",
-        "reviews_count": 1822
+        "reviews_count": 1822,
+        "category": "06"
     }
 ]

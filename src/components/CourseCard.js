@@ -27,7 +27,7 @@ const CourseCard = ({ course }) => {
                             <div className="card-footer bg-transparent border-success">
                                 <div className="d-grid gap-2 col-6 mx-auto">
                                     <Link to={slug}>
-                                        <button className="btn btn-success" type="button">
+                                        <button className="btn btn-secondary" type="button">
                                             Get Details
                                         </button>
                                     </Link>

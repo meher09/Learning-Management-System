@@ -15,6 +15,7 @@ const CoursesPage = () => {
 
                 <div className="row">
                     <div className="col-md-9">
+                        
                         <div class="row row-cols-1 row-cols-md-3 g-4">
                             {
                                 allCourse.map(course => <CourseCard
@@ -28,9 +29,7 @@ const CoursesPage = () => {
                     <div className="col-md-3">
                         <h4>Course Categories</h4>
                         <hr className='w-50 mx-auto' />
-
                         <Sidebar></Sidebar>
-
                     </div>
 
 
