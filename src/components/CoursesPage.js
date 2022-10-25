@@ -8,7 +8,7 @@ const CoursesPage = () => {
     return (
         <div>
             <div className="container my-5">
-                <h2 className='text-uppercase'>Our Latest Courses</h2>
+                <h2 className='text-uppercase'>Our Courses List</h2>
                 <p>Here we have added some of the courses for your consideration.
                     you can browse our course page for more courses</p>
                 <hr className='w-50 mx-auto mb-5' />

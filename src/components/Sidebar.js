@@ -4,6 +4,7 @@ import { AiFillCaretRight } from "react-icons/ai";
 
 
 const Sidebar = () => {
+
     const [categories, setCategories] = useState([]);
 
     useEffect(() => {
@@ -28,7 +29,7 @@ const Sidebar = () => {
                     categories.map(category => <Link className='text-decoration-none text-reset' to={`/category/${category.slug}`}> <button
                         type='button'
                         className='list-group-item list-group-item-action '
-                        key={category.id}>
+                    >
                         <AiFillCaretRight className='text-danger' /> {category.name}
                     </button> </Link>
                     )
