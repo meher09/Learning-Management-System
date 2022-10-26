@@ -29,7 +29,11 @@ const LoginForm = () => {
                 const user = result.user;
                 form.reset()
                 setError('')
-                navigate(from, { replace: true });
+                if (user.uid) {
+                    navigate(from, { replace: true });
+                } else {
+                    setError('Some thing goes Wrong')
+                }
 
             })
             .catch(error => {
@@ -60,6 +64,8 @@ const LoginForm = () => {
                         </div>
                         <hr className='w-50 mx-auto' />
                         <h2 className='text-muted h5'>or</h2>
+
+                        {error && <div class="alert alert-danger" role="alert">{error}</div>}
 
                         <form className='text-start' onSubmit={handleSubmit}>
                             <div className="mb-3 ">
