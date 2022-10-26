@@ -18,13 +18,13 @@ export const routes = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>,
-                loader: () => fetch('Data/course-intro.json')
+                loader: () => fetch('http://localhost:5000/courses')
 
             },
             {
                 path: 'courses/',
                 element: <CoursesPage></CoursesPage>,
-                loader: () => fetch('Data/course-intro.json')
+                loader: () => fetch('http://localhost:5000/courses')
             },
             {
                 path: '/category/:slug',
