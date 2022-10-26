@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import About from "../../components/About";
 import Blog from "../../components/Blog";
 import Category from "../../components/Category";
+import CheckOut from "../../components/CheckOut";
 import Course from "../../components/Course";
 import CoursesPage from "../../components/CoursesPage";
 import Faqs from "../../components/Faqs";
@@ -58,6 +59,12 @@ export const routes = createBrowserRouter([
             {
                 path: 'about/',
                 element: <About></About>
+            },
+            {
+                path: 'checkout/:slug',
+                element: <CheckOut></CheckOut>,
+                loader: ({ params }) => fetch(`http://localhost:5000/course/${params.slug}`)
+
             },
             {
                 path: '*',

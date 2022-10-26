@@ -1,10 +1,7 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import { FcApproval } from "react-icons/fc";
 import { FaCalculator, FaStar, FaVideo } from 'react-icons/fa';
-
-
-
 
 const Course = () => {
     const course = useLoaderData()
@@ -12,11 +9,10 @@ const Course = () => {
         <div className='container text-start'>
             <div className="row">
                 <div className="col-md-8 my-5 border p-5">
-                    <h2 className='text-uppercase h3'>{course.name}</h2>
                     <div className="text-center">
                         <img src={course.image} alt="" height="200" className='text-center' />
                     </div>
-
+                    <h2 className='text-uppercase h3 my-4'>{course.name}</h2>
                     <hr />
                     <p className='text-start mb-4'>{course.description}</p>
                     <h3 className='h4 text-uppercase mb-3'>What you learn</h3>
@@ -25,7 +21,6 @@ const Course = () => {
                             course.whatlearn.map(c => <li >{c}</li>)
                         }
                     </ul>
-
                     <h3 className='my-4'>Course Contents</h3>
                     <ul class="list-group list-group-flush">
                         {
@@ -33,7 +28,6 @@ const Course = () => {
                         }
 
                     </ul>
-
                 </div>
                 <div className="col-md-4 my-5 p-5">
                     <h3 className='text-uppercase h5'>Course Overview</h3>
@@ -47,17 +41,12 @@ const Course = () => {
                     </div>
 
                     <div class="d-grid gap-2 mx-auto">
-                        <button class="btn btn-warning" type="button">Get Access Now</button>
+                        <Link to='/checkout' className="btn btn-warning" type="button">Get Access Now</Link>
+
                     </div>
-
-
                 </div>
             </div>
-
-
-
         </div>
     );
 };
-
 export default Course;
