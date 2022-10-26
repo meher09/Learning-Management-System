@@ -1,18 +1,59 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import { FcGoogle } from "react-icons/fc";
 import { GoMarkGithub } from "react-icons/go";
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../contexts/AuthProvider/AuthProvider';
 
 
 const RegisterForm = () => {
+    const [error, setError] = useState('');
+    const { createUser, updateUserProfile } = useContext(AuthContext)
 
+
+    // Toast 
+
+    // handle submit form
     const handleSubmit = event => {
         event.preventDefault();
         const form = event.target;
+        const full_name = form.full_name.value;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(email, password)
+        const password_two = form.password_two.value;
+        const photo = form.photo.value;
+        // console.log(full_name, email, password, password_two, photo)
+
+
+        // Create Users function
+        createUser(email, password)
+            .then(result => {
+                const user = result.user
+                setError('')
+                form.reset()
+                handleUpdateUserProfile(full_name, photo)
+                console.log(user)
+            })
+
     }
+
+
+    // Handle Update profile 
+    const handleUpdateUserProfile = (name, photo) => {
+        const profile = {
+            displayName: name,
+            photoURL: photo
+        }
+
+        updateUserProfile(profile)
+            .then(() => { })
+            .catch(error => console.error(error));
+    }
+
+
+
+
+
+
 
     return (
         <div className="container w-50 mx-auto my-5">

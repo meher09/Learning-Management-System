@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { AuthContext } from '../contexts/AuthProvider/AuthProvider';
+
 
 const Faqs = () => {
+
+    const user = useContext(AuthContext)
     return (
-        <div>
-            This is FAQs Page
-        </div>
+        <>
+        </>
     );
 };
 

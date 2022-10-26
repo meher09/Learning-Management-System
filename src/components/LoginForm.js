@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { FcGoogle } from "react-icons/fc";
 import { GoMarkGithub } from "react-icons/go";
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../contexts/AuthProvider/AuthProvider';
 
 
 const LoginForm = () => {
+
+    const { signIn } = useContext(AuthContext)
 
     const handleSubmit = event => {
         event.preventDefault();
@@ -12,6 +15,16 @@ const LoginForm = () => {
         const email = form.email.value;
         const password = form.password.value;
         console.log(email, password)
+
+        signIn(email, password)
+            .then(result => {
+                const user = result.user;
+                console.log(user)
+            })
+
+
+
+
     }
 
     return (
