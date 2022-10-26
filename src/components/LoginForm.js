@@ -1,13 +1,21 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { FcGoogle } from "react-icons/fc";
 import { GoMarkGithub } from "react-icons/go";
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../contexts/AuthProvider/AuthProvider';
 
 
 const LoginForm = () => {
 
-    const { signIn } = useContext(AuthContext)
+
+
+    const [error, setError] = useState('');
+    const { signIn, setLoading } = useContext(AuthContext)
+
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/';
+
 
     const handleSubmit = event => {
         event.preventDefault();
@@ -19,13 +27,19 @@ const LoginForm = () => {
         signIn(email, password)
             .then(result => {
                 const user = result.user;
-                console.log(user)
+                form.reset()
+                setError('')
+                navigate(from, { replace: true });
+
             })
+            .catch(error => {
+                setError(error.message)
 
-
-
-
+            })
+            .finally(() => setLoading(false))
     }
+
+
 
     return (
         <div className="container w-50 mx-auto my-5">

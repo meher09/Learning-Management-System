@@ -9,15 +9,19 @@ const auth = getAuth(app)
 
 const AuthProvider = ({ children }) => {
 
+    const [loading, setLoading] = useState(true);
+
+
     // Create user with email and password
     const createUser = (email, password) => {
-
+        setLoading(true);
         return createUserWithEmailAndPassword(auth, email, password)
     }
 
 
     // Logn with Email and Password
     const signIn = (email, password) => {
+        setLoading(true);
         return signInWithEmailAndPassword(auth, email, password);
     }
 
@@ -30,7 +34,7 @@ const AuthProvider = ({ children }) => {
 
 
 
-    const authinfo = { createUser, updateUserProfile, signIn }
+    const authinfo = { createUser, updateUserProfile, signIn,loading, setLoading, }
 
     return (
         <AuthContext.Provider value={authinfo}>
