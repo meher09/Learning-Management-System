@@ -8,7 +8,7 @@ const Sidebar = () => {
     const [categories, setCategories] = useState([]);
 
     useEffect(() => {
-        fetch('Data/course-categories.json')
+        fetch('http://localhost:5000/course-categories')
             .then(res => res.json())
             .then(data => setCategories(data));
     }, [])
