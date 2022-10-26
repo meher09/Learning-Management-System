@@ -23,6 +23,7 @@ const CoursesPage = () => {
                                     course={course}
                                 ></CourseCard>)
                             }
+                            
                         </div>
                     </div>
 

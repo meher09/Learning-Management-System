@@ -36,7 +36,7 @@ const CourseCard = ({ course }) => {
                         </div>
 
                     </div>
-                </div>
+                </div >
             }
         </>
     );

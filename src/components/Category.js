@@ -1,6 +1,5 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
-import CourseCard from './CourseCard';
 import CoursesPage from './CoursesPage';
 
 const Category = () => {

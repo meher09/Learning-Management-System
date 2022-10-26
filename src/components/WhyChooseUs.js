@@ -1,5 +1,5 @@
 import React from 'react';
-import { HiBadgeCheck, HiLightningBolt, HiArrowSmDown } from "react-icons/hi"
+import { HiBadgeCheck, HiLightningBolt } from "react-icons/hi"
 const WhyChooseUs = () => {
     return (
         <div className="container my-5">
