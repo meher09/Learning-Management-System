@@ -30,16 +30,19 @@ const Course = () => {
                     <h3 className='h4 text-uppercase mb-3'>What you learn</h3>
                     <ul className='text-start'>
                         {
-                            whatlearn.map(c => <li >{c}</li>)
+                            whatlearn.map(c => <li key={c.toString()}>{c}</li>)
                         }
                     </ul>
                     <h3 className='my-4'>Course Contents</h3>
                     <ul className="list-group list-group-flush">
                         {
-                            contents.map(content => <li className='list-group-item'><FcApproval className='me-2' /> {content}</li>)
+                            contents.map(content => <li key={content.id} className='list-group-item'><FcApproval className='me-2' /> {content}</li>)
                         }
 
                     </ul>
+                    <div className="d-grid gap-2 mx-auto my-5">
+                        <Link to={`/checkout/${slug}`} className="btn btn-warning" type="button">Get Access Now</Link>
+                    </div>
                 </div>
                 <div className="col-md-4 my-5 p-5">
                     <h3 className='text-uppercase h5'>Course Overview</h3>

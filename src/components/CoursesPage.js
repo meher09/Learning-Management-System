@@ -27,7 +27,7 @@ const CoursesPage = () => {
                     <div className="col-md-3">
                         <h4 className=' text-center'>Course Categories</h4>
                         <hr className='w-50 mx-auto' />
-                        <Sidebar></Sidebar>
+                        <Sidebar ></Sidebar>
                     </div>
                 </div>
             </div>

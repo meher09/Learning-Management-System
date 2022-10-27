@@ -1,13 +1,14 @@
 import React, { useContext, useState } from 'react';
-import { FcGoogle } from "react-icons/fc";
-import { GoMarkGithub } from "react-icons/go";
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../contexts/AuthProvider/AuthProvider';
 
 
 const RegisterForm = () => {
     const [error, setError] = useState('');
     const { createUser, updateUserProfile } = useContext(AuthContext)
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/';
 
 
     // Toast 
@@ -26,13 +27,10 @@ const RegisterForm = () => {
         createUser(email, password)
             .then(result => {
                 const user = result.user;
-
                 setError('');
                 form.reset();
                 handleUpdateUserProfile(full_name, photo);
-                console.log(user)
-
-
+                navigate(from, { replace: true });
             })
             .catch(error => setError(error.message))
     }

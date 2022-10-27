@@ -26,7 +26,7 @@ const Sidebar = () => {
 
 
                 {
-                    categories.map(category => <Link className='text-decoration-none text-reset' to={`/category/${category.slug}`}> <button
+                    categories.map(category => <Link key={category.id} className='text-decoration-none text-reset' to={`/category/${category.slug}`}> <button
                         type='button'
                         className='list-group-item list-group-item-action '
                     >
