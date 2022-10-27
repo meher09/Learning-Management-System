@@ -12,7 +12,6 @@ const CoursesPage = () => {
                 <p>Here we have added some of the courses for your consideration.
                     you can browse our course page for more courses</p>
                 <hr className='w-50 mx-auto mb-5' />
-
                 <div className="row">
                     <div className="col-md-9">
 
@@ -23,28 +22,15 @@ const CoursesPage = () => {
                                     course={course}
                                 ></CourseCard>)
                             }
-                            
+
                         </div>
                     </div>
-
                     <div className="col-md-3">
                         <h4>Course Categories</h4>
                         <hr className='w-50 mx-auto' />
                         <Sidebar></Sidebar>
                     </div>
-
-
-
-
-
                 </div>
-
-
-
-
-
-
-
             </div>
         </div>
     );

@@ -20,24 +20,24 @@ export const routes = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>,
-                loader: () => fetch('http://localhost:5000/courses')
+                loader: () => fetch('https://itshikkha-course-server.vercel.app/courses')
 
             },
             {
                 path: 'courses/',
                 element: <CoursesPage></CoursesPage>,
-                loader: () => fetch('http://localhost:5000/courses')
+                loader: () => fetch('https://itshikkha-course-server.vercel.app/courses')
             },
             {
                 path: '/category/:slug',
                 element: <Category></Category>,
-                loader: ({ params }) => fetch(`http://localhost:5000/category/${params.slug}`)
+                loader: ({ params }) => fetch(`https://itshikkha-course-server.vercel.app/category/${params.slug}`)
 
             },
             {
                 path: '/:slug',
                 element: <Course></Course>,
-                loader: ({ params }) => fetch(`http://localhost:5000/course/${params.slug}`)
+                loader: ({ params }) => fetch(`https://itshikkha-course-server.vercel.app/course/${params.slug}`)
 
             },
             {
@@ -63,7 +63,7 @@ export const routes = createBrowserRouter([
             {
                 path: 'checkout/:slug',
                 element: <CheckOut></CheckOut>,
-                loader: ({ params }) => fetch(`http://localhost:5000/course/${params.slug}`)
+                loader: ({ params }) => fetch(`https://itshikkha-course-server.vercel.app/course/${params.slug}`)
 
             },
             {
