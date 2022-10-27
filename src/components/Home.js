@@ -13,7 +13,7 @@ const Home = () => {
         <>
             <Carousel></Carousel>
             <WhyChooseUs></WhyChooseUs>
-            <div className="container">
+            <div className="container text-center">
                 <h2 className='text-uppercase'>Our Latest Courses</h2>
                 <p>Here we have added some of the courses for your consideration.
                     you can browse our course page for more courses</p>

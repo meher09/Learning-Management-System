@@ -2,11 +2,16 @@ import React from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import { FcApproval } from "react-icons/fc";
 import { FaCalculator, FaFilePdf, FaStar, FaVideo } from 'react-icons/fa';
+import Pdf from "react-to-pdf";
+
+const ref = React.createRef();
+
+
 
 const Course = () => {
     const { name, description, image, whatlearn, contents, instructor_image, instructor, total_vedio, rating, reviews_count, slug } = useLoaderData()
     return (
-        <div className='container text-start'>
+        <div className='container text-start' ref={ref}>
             <div className="row">
                 <div className="col-md-8 my-5 border p-5">
                     <div className="text-center">
@@ -14,7 +19,10 @@ const Course = () => {
                     </div>
                     <div className="d-flex justify-content-between mb-4">
                         <h2 className='text-uppercase h3 '>{name}</h2>
-                        <button className="btn btn-danger"><FaFilePdf className='me-3' />Download PDF</button>
+
+                        <Pdf targetRef={ref} filename="code-example.pdf">
+                            {({ toPdf }) => <button className="btn btn-danger" onClick={toPdf}><FaFilePdf className='me-3' />Download PDF</button>}
+                        </Pdf>
                     </div>
 
                     <hr />

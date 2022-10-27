@@ -2,8 +2,8 @@ import React from 'react';
 import { HiBadgeCheck, HiLightningBolt } from "react-icons/hi"
 const WhyChooseUs = () => {
     return (
-        <div className="container my-5">
-            <h2 className='text-uppercase mb-3'>Why should you choose us</h2>
+        <div className="container my-5 text-center">
+            <h2 className='text-uppercase mb-3 '>Why should you choose us</h2>
             <hr className='w-50 mx-auto mb-5' />
             <div className="row">
                 <div className="col-sm-6">
