@@ -6,7 +6,6 @@ const CheckOut = () => {
     const course = useLoaderData()
     const total_fee = course.fee.course_fee - course.fee.discount
     const { user } = useContext(AuthContext)
-    console.log(user.displayName !== null)
 
     return (
 

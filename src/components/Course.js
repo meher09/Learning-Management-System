@@ -36,7 +36,7 @@ const Course = () => {
                     <h3 className='my-4'>Course Contents</h3>
                     <ul className="list-group list-group-flush">
                         {
-                            contents.map(content => <li key={content.id} className='list-group-item'><FcApproval className='me-2' /> {content}</li>)
+                            contents.map(content => <li key={content.toString()} className='list-group-item'><FcApproval className='me-2' /> {content}</li>)
                         }
 
                     </ul>
