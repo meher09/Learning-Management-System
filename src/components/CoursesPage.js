@@ -8,13 +8,12 @@ const CoursesPage = () => {
     return (
         <div>
             <div className="container my-5">
-                <h2 className='text-uppercase'>Our Courses List</h2>
-                <p>Here we have added some of the courses for your consideration.
+                <h2 className='text-uppercase text-center'>Our Courses List</h2>
+                <p className=' text-center'>Here we have added some of the courses for your consideration.
                     you can browse our course page for more courses</p>
                 <hr className='w-50 mx-auto mb-5' />
                 <div className="row">
                     <div className="col-md-9">
-
                         <div className="row row-cols-1 row-cols-md-3 g-4">
                             {
                                 allCourse.map(course => <CourseCard
@@ -26,7 +25,7 @@ const CoursesPage = () => {
                         </div>
                     </div>
                     <div className="col-md-3">
-                        <h4>Course Categories</h4>
+                        <h4 className=' text-center'>Course Categories</h4>
                         <hr className='w-50 mx-auto' />
                         <Sidebar></Sidebar>
                     </div>

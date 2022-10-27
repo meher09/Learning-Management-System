@@ -17,7 +17,7 @@ const About = () => {
                                     React is a great option for developing an LMS because it offers so many ways to customize the user experience.
                                 </p>
 
-                                <h3 className="h4">What Features are Availabl here</h3>
+                                <h3 className="h4">What Features are Available here</h3>
                                 <p>There are many features that make our lms  good, but here are some of the most important ones:</p>
                                 <ul>
                                     <li>- Ease of use: The system should be easy to use for both administrators and learners. This includes having a user-friendly interface and intuitive controls.</li>

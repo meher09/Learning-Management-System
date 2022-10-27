@@ -65,7 +65,7 @@ const LoginForm = () => {
                         <hr className='w-50 mx-auto' />
                         <h2 className='text-muted h5'>or</h2>
 
-                        {error && <div class="alert alert-danger" role="alert">{error}</div>}
+                        {error && <div className="alert alert-danger" role="alert">{error}</div>}
 
                         <form className='text-start' onSubmit={handleSubmit}>
                             <div className="mb-3 ">

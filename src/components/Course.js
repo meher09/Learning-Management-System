@@ -22,7 +22,7 @@ const Course = () => {
                         }
                     </ul>
                     <h3 className='my-4'>Course Contents</h3>
-                    <ul class="list-group list-group-flush">
+                    <ul className="list-group list-group-flush">
                         {
                             contents.map(content => <li className='list-group-item'><FcApproval className='me-2' /> {content}</li>)
                         }
@@ -40,7 +40,7 @@ const Course = () => {
                         <p><FaCalculator className='text-warning me-3' />Review Counts: {reviews_count}</p>
                     </div>
 
-                    <div class="d-grid gap-2 mx-auto">
+                    <div className="d-grid gap-2 mx-auto">
                         <Link to={`/checkout/${slug}`} className="btn btn-warning" type="button">Get Access Now</Link>
                     </div>
                 </div>
