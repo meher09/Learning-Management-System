@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import { FcApproval } from "react-icons/fc";
-import { FaCalculator, FaStar, FaVideo } from 'react-icons/fa';
+import { FaCalculator, FaFilePdf, FaStar, FaVideo } from 'react-icons/fa';
 
 const Course = () => {
     const { name, description, image, whatlearn, contents, instructor_image, instructor, total_vedio, rating, reviews_count, slug } = useLoaderData()
@@ -10,9 +10,13 @@ const Course = () => {
             <div className="row">
                 <div className="col-md-8 my-5 border p-5">
                     <div className="text-center">
-                        <img src={image} alt="" height="200" className='text-center' />
+                        <img src={image} alt="" height="200" className='text-center mb-3' />
                     </div>
-                    <h2 className='text-uppercase h3 my-4'>{name}</h2>
+                    <div className="d-flex justify-content-between mb-4">
+                        <h2 className='text-uppercase h3 '>{name}</h2>
+                        <button className="btn btn-danger"><FaFilePdf className='me-3' />Download PDF</button>
+                    </div>
+
                     <hr />
                     <p className='text-start mb-4'>{description}</p>
                     <h3 className='h4 text-uppercase mb-3'>What you learn</h3>
