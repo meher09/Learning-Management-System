@@ -1,7 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import logo from "../mylogo.png"
+import { FaSun, FaMoon } from "react-icons/fa";
+import { useState } from 'react';
+
+
 const Headers = () => {
+
+    const [light, setLight] = useState(true);
+
+    const handleLightDark = () => {
+        setLight(!light);
+    }
+
+
     return (
         <header>
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark py-3">
@@ -31,6 +43,13 @@ const Headers = () => {
                             </li>
                             <li className="nav-item">
                                 <Link className="nav-link" to="/about">About</Link>
+                            </li>
+                            <li className="nav-item ms-4" >
+                                <button className="nav-link btn btn-secondary" onClick={handleLightDark}>
+                                    {
+                                        light ? <><FaSun className='text-warning' /> Light Mode</> : <><FaMoon className='text-light' /> Dark Mode</>
+                                    }
+                                </button>
                             </li>
 
                         </ul>
