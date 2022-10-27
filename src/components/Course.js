@@ -20,7 +20,7 @@ const Course = () => {
                     <div className="d-flex justify-content-between mb-4">
                         <h2 className='text-uppercase h3 '>{name}</h2>
 
-                        <Pdf targetRef={ref} filename="code-example.pdf">
+                        <Pdf targetRef={ref} filename="course-outline.pdf">
                             {({ toPdf }) => <button className="btn btn-danger" onClick={toPdf}><FaFilePdf className='me-3' />Download PDF</button>}
                         </Pdf>
                     </div>

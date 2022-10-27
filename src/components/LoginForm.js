@@ -7,46 +7,17 @@ import { AuthContext } from '../contexts/AuthProvider/AuthProvider';
 
 const LoginForm = () => {
 
-
-
-    const [error, setError] = useState('');
-    const { signIn, setLoading } = useContext(AuthContext)
-
-    const navigate = useNavigate();
-    const location = useLocation();
-    const from = location.state?.from?.pathname || '/';
-
-
-    const handleSubmit = event => {
+    const handleSubmit = (event) => {
         event.preventDefault();
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
         console.log(email, password)
-
-        signIn(email, password)
-            .then(result => {
-                const user = result.user;
-                form.reset()
-                setError('')
-                if (user.uid) {
-                    navigate(from, { replace: true });
-                } else {
-                    setError('Some thing goes Wrong')
-                }
-
-            })
-            .catch(error => {
-                setError(error.message)
-
-            })
-            .finally(() => setLoading(false))
     }
 
 
-
     return (
-        <div className="container w-50 mx-auto my-5">
+        <div className="container w-50 mx-auto my-5 text-center">
             <div className="card">
                 <div className="card-body">
                     <div className="card-title">

@@ -3,11 +3,14 @@ import { Link } from 'react-router-dom';
 import logo from "../mylogo.png"
 import { FaSun, FaMoon } from "react-icons/fa";
 import { useState } from 'react';
+import { useContext } from 'react';
+import { AuthContext } from '../contexts/AuthProvider/AuthProvider';
 
 
 const Headers = () => {
-
     const [light, setLight] = useState(true);
+    const { user } = useContext(AuthContext);
+    console.log(user)
 
     const handleLightDark = () => {
         setLight(!light);
@@ -44,6 +47,7 @@ const Headers = () => {
                             <li className="nav-item">
                                 <Link className="nav-link" to="/about">About</Link>
                             </li>
+
                             <li className="nav-item ms-4" >
                                 <button className="nav-link btn btn-secondary" onClick={handleLightDark}>
                                     {
@@ -53,10 +57,28 @@ const Headers = () => {
                             </li>
 
                         </ul>
+
+
+
                         <div className="text-md-end">
-                            <Link type="button" className="btn btn-warning  me-2" to='login'> Login</Link>
-                            <i className="fa-regular fa-circle"></i>
+
+                            <>
+                                {
+                                    user?.uid ?
+                                        <>
+                                            <Link type="button" className="btn btn-warning  me-2" to='login'> Logout</Link>
+                                        </>
+                                        :
+                                        <>
+                                            <Link type="button" className="btn btn-warning  me-2" to='login'> Login</Link>
+                                        </>
+                                }
+
+
+                            </>
+
                         </div>
+
 
                     </div>
                 </div>
