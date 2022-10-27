@@ -19,12 +19,36 @@ const RegisterForm = () => {
         const full_name = form.full_name.value;
         const email = form.email.value;
         const password = form.password.value;
-        const password_two = form.password_two.value;
         const photo = form.photo.value;
-        console.log(full_name, email, password, password_two, photo)
+        console.log(full_name, email, password, photo)
 
 
+        createUser(email, password)
+            .then(result => {
+                const user = result.user;
+
+                setError('');
+                form.reset();
+                handleUpdateUserProfile(full_name, photo);
+                console.log(user)
+
+
+            })
+            .catch(error => setError(error.message))
     }
+
+
+    const handleUpdateUserProfile = (name, photoURL) => {
+        const profile = {
+            displayName: name,
+            photoURL: photoURL
+        }
+        updateUserProfile(profile)
+            .then(() => { })
+            .catch(error => setError(error.message));
+    }
+
+
 
 
     return (
@@ -35,6 +59,9 @@ const RegisterForm = () => {
                         <h4 className='text-uppercase'>Register Now</h4>
                         <p>Register to Access the Contents</p>
                         <hr className='w-25 mx-auto' />
+
+                        {error && <div className="alert alert-danger my-3" role="alert">{error}</div>}
+
                         <form className='text-start' onSubmit={handleSubmit}>
                             <div className="mb-3 ">
                                 <label htmlFor="full_name" className="form-label">Full Name</label>
@@ -50,10 +77,6 @@ const RegisterForm = () => {
                                 <input type="password" name="password" className="form-control" />
                             </div>
 
-                            <div className="mb-3">
-                                <label htmlFor="password_two" className="form-label">Password Confirmation</label>
-                                <input type="password" name="password_two" className="form-control" />
-                            </div>
 
                             <div className="mb-3">
                                 <label htmlFor="photo" className="form-label">Photo Url</label>

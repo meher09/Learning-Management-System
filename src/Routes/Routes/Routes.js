@@ -11,6 +11,7 @@ import LoginForm from "../../components/LoginForm";
 import PageNotFound from "../../components/PageNotFound";
 import RegisterForm from "../../components/RegisterForm";
 import Main from "../../layouts/Main";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 export const routes = createBrowserRouter([
     {
@@ -62,7 +63,7 @@ export const routes = createBrowserRouter([
             },
             {
                 path: 'checkout/:slug',
-                element: <CheckOut></CheckOut>,
+                element: <PrivateRoute><CheckOut></CheckOut></PrivateRoute>,
                 loader: ({ params }) => fetch(`https://itshikkha-course-server.vercel.app/course/${params.slug}`)
 
             },

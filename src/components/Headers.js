@@ -5,15 +5,23 @@ import { FaSun, FaMoon } from "react-icons/fa";
 import { useState } from 'react';
 import { useContext } from 'react';
 import { AuthContext } from '../contexts/AuthProvider/AuthProvider';
+import { HiUserCircle } from 'react-icons/hi';
 
 
 const Headers = () => {
     const [light, setLight] = useState(true);
-    const { user } = useContext(AuthContext);
-    console.log(user)
+    const { user, logOut } = useContext(AuthContext);
+
+
 
     const handleLightDark = () => {
         setLight(!light);
+    }
+
+    const handleLogout = () => {
+        logOut()
+            .then(() => { })
+            .catch(error => error.message)
     }
 
 
@@ -57,34 +65,31 @@ const Headers = () => {
                             </li>
 
                         </ul>
+                        <>
+                            {
+                                !user?.uid ?
+                                    <div className="text-md-end">
+                                        <Link type="button" className="btn btn-warning  me-2" to='/login'> <HiUserCircle /> Login</Link>
+                                        <Link type="button" className="btn btn-warning  me-2" to='/register'> Register</Link>
+                                    </div>
+                                    :
+                                    <div className="text-md-end">
 
+                                        <Link data-toggle="tooltip" data-placement="bottom" title={user?.displayName}>
+                                            <img src={user?.photoURL} alt="" height="40" width="40" className='rounded-circle me-3 d-inline ' />
+                                        </Link>
+                                        <button type="button" className="btn btn-warning  me-2" onClick={handleLogout}> Logout</button>
+                                    </div>
+                            }
+                        </>
 
-
-                        <div className="text-md-end">
-
-                            <>
-                                {
-                                    user?.uid ?
-                                        <>
-                                            <Link type="button" className="btn btn-warning  me-2" to='login'> Logout</Link>
-                                        </>
-                                        :
-                                        <>
-                                            <Link type="button" className="btn btn-warning  me-2" to='login'> Login</Link>
-                                        </>
-                                }
-
-
-                            </>
-
-                        </div>
 
 
                     </div>
                 </div>
             </nav>
 
-        </header>
+        </header >
     );
 };
 

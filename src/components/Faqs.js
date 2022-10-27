@@ -1,7 +1,6 @@
 import Sidebar from './Sidebar';
-
-
 const Faqs = () => {
+
     return (
         <div className="container text-start my-5">
 

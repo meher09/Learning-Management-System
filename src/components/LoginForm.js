@@ -1,3 +1,4 @@
+import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext, useState } from 'react';
 import { FcGoogle } from "react-icons/fc";
 import { GoMarkGithub } from "react-icons/go";
@@ -7,12 +8,54 @@ import { AuthContext } from '../contexts/AuthProvider/AuthProvider';
 
 const LoginForm = () => {
 
+    const [error, setError] = useState('');
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/';
+
+    const { providerLogin, signIn } = useContext(AuthContext)
+    const googleProvider = new GoogleAuthProvider()
+    const gitProvider = new GithubAuthProvider()
+
+
+
     const handleSubmit = (event) => {
         event.preventDefault();
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
         console.log(email, password)
+
+        signIn(email, password)
+            .then(result => {
+                const user = result.user
+                setError('');
+                form.reset();
+                navigate(from, { replace: true });
+
+            })
+            .catch(error => setError(error.message))
+    }
+
+    const handleGoogleSignIn = () => {
+        providerLogin(googleProvider)
+            .then(result => {
+                const user = result.user
+                setError('')
+                navigate(from, { replace: true });
+            })
+            .catch(error => setError(error.message))
+    }
+
+
+    const handleGitSignIn = () => {
+        providerLogin(gitProvider)
+            .then(result => {
+                const user = result.user
+                setError('')
+                navigate(from, { replace: true });
+            })
+            .catch(error => setError(error.message))
     }
 
 
@@ -26,12 +69,12 @@ const LoginForm = () => {
                         <hr className='w-25 mx-auto' />
 
                         <div className="d-flex justify-content-center">
-                            <div className="bg-light me-2 p-3 rounded border text-uppercase">
+                            <button onClick={handleGitSignIn} className="bg-light me-2 p-3 rounded border text-uppercase">
                                 <h2 className='h5'> <GoMarkGithub className='fs-1 me-2' /> Sign in with Github </h2>
-                            </div>
-                            <div className="bg-secondary me-2 p-3 rounded border text-uppercase text-white">
+                            </button>
+                            <button onClick={handleGoogleSignIn} className="bg-secondary me-2 p-3 rounded border text-uppercase text-white">
                                 <h2 className='h5'><FcGoogle className='fs-1 me-2' />sign in with Google</h2>
-                            </div>
+                            </button>
                         </div>
                         <hr className='w-50 mx-auto' />
                         <h2 className='text-muted h5'>or</h2>

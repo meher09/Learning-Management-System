@@ -5,66 +5,59 @@ import app from '../../firebase/firebase.config';
 export const AuthContext = createContext();
 const auth = getAuth(app);
 
+
+
 const AuthProvider = ({ children }) => {
-    const [user, setUser] = useState(null);
+
+    const [user, setUser] = useState(null)
     const [loading, setLoading] = useState(true);
+
+
+
 
     const providerLogin = (provider) => {
         setLoading(true);
-        return signInWithPopup(auth, provider);
+        return signInWithPopup(auth, provider)
     }
+
+
 
     const createUser = (email, password) => {
         setLoading(true);
-        return createUserWithEmailAndPassword(auth, email, password)
-    }
 
-    const signIn = (email, password) => {
-        setLoading(true);
-        return signInWithEmailAndPassword(auth, email, password);
+        return createUserWithEmailAndPassword(auth, email, password)
     }
 
     const updateUserProfile = (profile) => {
         return updateProfile(auth.currentUser, profile);
     }
 
-    const verifyEmail = () => {
-        return sendEmailVerification(auth.currentUser);
+    const signIn = (email, password) => {
+        setLoading(true);
+        return signInWithEmailAndPassword(auth, email, password)
     }
+
 
     const logOut = () => {
         setLoading(true);
-        return signOut(auth);
+        return signOut(auth)
     }
 
+
+
+    // Auth State Change
+
     useEffect(() => {
-        const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-            if (currentUser === null) {
-                setUser(currentUser);
-            }
+        const unsubscribe = onAuthStateChanged(auth, loggedinUser => {
+            setUser(loggedinUser)
             setLoading(false);
-        });
-
-        return () => {
-            unsubscribe();
-        }
-
+        })
+        return () => unsubscribe();
     }, [])
 
-    const authInfo = {
-        user,
-        loading,
-        setLoading,
-        providerLogin,
-        logOut,
-        updateUserProfile,
-        verifyEmail,
-        createUser,
-        signIn
-    };
 
 
-    console.log(user)
+    const authInfo = { user, providerLogin, logOut, createUser, signIn, loading, updateUserProfile };
     return (
         <AuthContext.Provider value={authInfo}>
             {children}
